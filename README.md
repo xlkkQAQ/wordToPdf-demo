@@ -16,7 +16,7 @@ docx4j对格式有一定限制，导入word文档大概率格式会乱，就不�
 
 ![image-20220906112611338](https://raw.githubusercontent.com/xlkkQAQ/wordToPdf-demo/master/README.assets/image-20220906112611338.png)
 
-![image-20220906113043853](\README.assets\image-20220906113043853.png)
+![image-20220906113043853](https://raw.githubusercontent.com/xlkkQAQ/wordToPdf-demo/master/README.assets/image-20220906113043853.png)
 
 经过测试，web方式会有一点点的格式偏差。不过还可以使用本地的方式，通过传本地word地址和pdf地址，可以高精度转换。
 
