@@ -14,7 +14,7 @@ docx4j对格式有一定限制，导入word文档大概率格式会乱，就不�
 
 运行项目，默认进入该界面（过于简陋，后续优化），上传本地word文件，点击转pdf按钮，会自动转pdf并展示。用户可以直接下载下来。
 
-![image-20220906112611338](https://github.com/xlkkQAQ/wordToPdf-demo/README.assets/image-20220906112611338.png)
+![image-20220906112611338](https://raw.githubusercontent.com/xlkkQAQ/wordToPdf-demo/master/README.assets/image-20220906112611338.png)
 
 ![image-20220906113043853](\README.assets\image-20220906113043853.png)
 
