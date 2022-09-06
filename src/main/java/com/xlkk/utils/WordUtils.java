@@ -43,11 +43,6 @@ public class WordUtils {
         String fullFileName = new String(fileName.getBytes(), StandardCharsets.ISO_8859_1);
         response.setHeader("Content-disposition", "attachment;filename=" + fullFileName + ".pdf");
         WordprocessingMLPackage wmlPackage = WordprocessingMLPackage.load(in);
-//        if (params!=null&&!params.isEmpty()) {
-//            MainDocumentPart documentPart = wmlPackage.getMainDocumentPart();
-////            cleanDocumentPart(documentPart);
-//            documentPart.variableReplace(params);
-//        }
         setFontMapper(wmlPackage);
         Docx4J.toPDF(wmlPackage,response.getOutputStream());
     }
