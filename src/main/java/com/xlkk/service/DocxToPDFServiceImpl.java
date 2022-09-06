@@ -1,11 +1,15 @@
 package com.xlkk.service;
 
+import com.xlkk.utils.AsposeUtil;
 import com.xlkk.utils.FileUtil;
 import com.xlkk.utils.WordUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.resource.HttpResource;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
+import java.io.IOException;
 
 /**
  * @author xlkk
@@ -30,6 +34,16 @@ public class DocxToPDFServiceImpl {
     }
 
 
-
+    public void changeByUpload(MultipartFile file, HttpServletResponse res) {
+        try {
+            byte[] bytes = file.getBytes();
+            WordUtils.convertDocxToPdf(bytes,res);
+        } catch (Exception e) {
+            System.out.println("-------失败了");
+        }
+    }
+    public void changeByAspose(String wordPath, String pdfPath){
+        AsposeUtil.wordToPdf(wordPath, pdfPath);
+    }
 
 }

@@ -7,7 +7,10 @@ import com.xlkk.service.DocxToPDFServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.resource.HttpResource;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
@@ -39,4 +42,10 @@ public class TurnController {
     public void docxToPdf(HttpServletResponse res){
         docxToPDFService.docxToPdf(res);
     }
+
+    @PostMapping("/changeByUpload")
+    public void docxToPdfByUpload(@RequestParam("file") MultipartFile file, HttpServletResponse res){
+        docxToPDFService.changeByUpload(file,res);
+    }
+
 }

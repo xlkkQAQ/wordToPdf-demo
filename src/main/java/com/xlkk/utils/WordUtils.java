@@ -1,6 +1,7 @@
 package com.xlkk.utils;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.SystemUtils;
 import org.docx4j.Docx4J;
 import org.docx4j.fonts.IdentityPlusMapper;
 import org.docx4j.fonts.Mapper;
@@ -8,6 +9,7 @@ import org.docx4j.fonts.PhysicalFont;
 import org.docx4j.fonts.PhysicalFonts;
 import org.docx4j.openpackaging.packages.WordprocessingMLPackage;
 import org.docx4j.org.apache.poi.util.IOUtils;
+import org.springframework.boot.info.OsInfo;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
@@ -72,6 +74,7 @@ public class WordUtils {
         fontMapper.put("隶书", PhysicalFonts.get("LiSu"));
         fontMapper.put("宋体", PhysicalFonts.get("SimSun"));
         fontMapper.put("微软雅黑", PhysicalFonts.get("Microsoft Yahei"));
+        fontMapper.put("MSYH", PhysicalFonts.get("Microsoft Yahei"));
         fontMapper.put("黑体", PhysicalFonts.get("SimHei"));
         fontMapper.put("楷体", PhysicalFonts.get("KaiTi"));
         fontMapper.put("新宋体", PhysicalFonts.get("NSimSun"));
@@ -83,6 +86,7 @@ public class WordUtils {
         fontMapper.put("幼圆", PhysicalFonts.get("YouYuan"));
         fontMapper.put("华文宋体", PhysicalFonts.get("STSong"));
         fontMapper.put("华文中宋", PhysicalFonts.get("STZhongsong"));
+        fontMapper.put("CALIBRI", PhysicalFonts.get("CALIBRI"));
         mlPackage.setFontMapper(fontMapper);
     }
 
