@@ -10,6 +10,7 @@ import org.springframework.web.servlet.resource.HttpResource;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * @author xlkk
@@ -45,5 +46,13 @@ public class DocxToPDFServiceImpl {
     public void changeByAspose(String wordPath, String pdfPath){
         AsposeUtil.wordToPdf(wordPath, pdfPath);
     }
-
+    public void changeByAspose(MultipartFile file,HttpServletResponse res){
+        InputStream inputStream = null;
+        try {
+            inputStream = file.getInputStream();
+        } catch (IOException e) {
+            System.out.println("获取失败");
+        }
+        AsposeUtil.wordToPdf(inputStream,res);
+    }
 }

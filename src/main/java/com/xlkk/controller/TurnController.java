@@ -48,4 +48,9 @@ public class TurnController {
         docxToPDFService.changeByUpload(file,res);
     }
 
+    @PostMapping("/changeByAspose")
+    public void docxToPdfByAspose(@RequestParam("file") MultipartFile file, HttpServletResponse res){
+        docxToPDFService.changeByAspose(file,res);
+    }
+
 }

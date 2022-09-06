@@ -5,6 +5,7 @@ import com.aspose.words.License;
 import com.aspose.words.SaveFormat;
 import lombok.SneakyThrows;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -41,5 +42,15 @@ public class AsposeUtil {
         }catch (Exception e){
             System.out.println("失败了");
         }
+    }
+    @SneakyThrows
+    public static void wordToPdf(InputStream in, HttpServletResponse response) {
+        getLicense();
+        response.setContentType("application/pdf");
+        Document doc = new Document(in);
+        String fileName = doc.getOriginalFileName();
+        response.setHeader("Content-disposition", "attachment;filename=" + fileName + ".pdf");
+        doc.save(response.getOutputStream(), SaveFormat.PDF);
+
     }
 }
