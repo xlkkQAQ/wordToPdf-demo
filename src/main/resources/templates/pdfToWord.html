@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>pdf转word</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+上传pdf，直接转word
+<form method="POST" enctype="multipart/form-data" action="/pdfToWord">
+    <p>
+        文件：<input type="file" name="file" />
+    </p>
+    <p>
+        <input type="submit" value="转word" />
+    </p>
+</form>
+</body>
+</html>
